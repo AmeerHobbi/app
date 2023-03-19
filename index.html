@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <title>Login</title>
+</head>
+<body>
+    <form >
+        <table>
+            <tr>
+                <td><label >Email</label></td>
+                <td><input oninvalid="ErrorMsg(this)" oninput="ErrorMsg(this)" required type="email" name="email"  /></td>
+            </tr>
+            <tr>
+                <td><label >Password</label></td>
+                <td><input oninvalid="ErrorMsg(this)" oninput="ErrorMsg(this)" required type="password" name="password"/></td>
+            </tr>
+            <tr>
+                <td><button type="submit" >Login</button></td>
+                <td><a href="Register.html">Create account</a></td>
+            </tr>
+        </table>
+        <script>
+            function ErrorMsg(input){
+                if(input.value == '')
+                    {input.setCustomValidity('you need to fill it all <3');}
+                else if(input.validity.typeMismatch){
+                    input.setCustomValidity('unvalid email or incorrect data');
+                }
+                else{input.setCustomValidity('good boy');}
+                return true;
+            }
+        </script>
+</form>
+</body>
+</html>
